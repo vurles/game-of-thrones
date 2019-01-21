@@ -20,13 +20,13 @@ return resultado;
 };// fin de capitulos
 
 // filtrando por capitulos
-selectCap.addEventListener("change", () => {
+selectCap.addEventListener('change', () => {
     let condition = selectCap.value;// hago una variable condition y le paso el valor de mi select con .value  
-	let filter = filterTem(datos, condition);// llamo a mi funcion que esta en data
+	let filtered = filterTem(datos, condition);// llamo a mi funcion que esta en data
     //se limpia el div para poder seleccionar any temporada;
 	boxCap.innerHTML = "";
 	
-    filter.forEach(element => {
+    filtered.forEach(element => {
         boxCap.innerHTML +=`
         <div class="card">
             <h2>Titulo : ${element.episodeTitle}</h2>
@@ -37,5 +37,5 @@ selectCap.addEventListener("change", () => {
             </div>
         </div>` 
     })
-});
+})
 window.onload = showTemporada(datos);
